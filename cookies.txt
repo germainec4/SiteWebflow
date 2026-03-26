@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.clementgermaine.com	TRUE	/	FALSE	1999999999	_cfuvid	RBPSrbzYNhQO83lqJz88Zfaf0RfxFr.BLCqynpEw7mY-1774557747.0880554-1.0.1.1-w.SDdNhdLFFsjVBWewfnNnYri4VtuJKXXyAl77Z.5.k
+www.clementgermaine.com	TRUE	/	FALSE	1999999999	SameSite	None
+
