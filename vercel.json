@@ -10,17 +10,6 @@
       "source": "/www.clementgermaine.com",
       "destination": "/",
       "permanent": true
-    },
-    {
-      "source": "/index.html",
-      "destination": "/",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/www.clementgermaine.com/index.html"
     }
   ]
 }
