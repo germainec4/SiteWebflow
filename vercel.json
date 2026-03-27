@@ -1,0 +1,26 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/www.clementgermaine.com/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/www.clementgermaine.com",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/www.clementgermaine.com/index.html"
+    }
+  ]
+}
