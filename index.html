@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html><!-- Last Published: Thu Mar 26 2026 10:04:48 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Thu Mar 26 2026 10:04:48 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="www.clementgermaine.com" data-wf-page="67829ee4c36756f3a6ecc238"
   data-wf-site="67829ee3c36756f3a6ecc22a">
 
@@ -183,6 +183,55 @@
 
     .logo-eyes-wrapper.eyes-blink .eye-ball {
       animation: eye-blink 0.25s ease-out;
+    }
+  </style>
+
+  <style>
+    /* =============================================
+       MICRO-ANIMATION — Section "Mon Rôle"
+       Keyframe appliquée directement sur l'image
+       sans toucher au positionnement des divs.
+    ============================================= */
+    @keyframes monrole-float {
+      0%   { transform: translateY(0px) scale(1); }
+      35%  { transform: translateY(-6px) scale(1.015); }
+      70%  { transform: translateY(-2px) scale(1.007); }
+      100% { transform: translateY(0px) scale(1); }
+    }
+
+    /* Animation sur l'image directement — pas de
+       modification du positionnement du parent */
+    img.image-11.monrole-hint-active {
+      animation: monrole-float 3s ease-in-out infinite;
+      transform-origin: center center;
+    }
+
+    /* Arrêt propre au premier hover */
+    img.image-11.monrole-hint-done {
+      animation: none !important;
+      transition: transform 0.5s ease-out;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Badge discret — positionné dans le container
+       global de la section (pas dans la div mobile) */
+    .monrole-hover-hint {
+      display: block;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      margin-top: 8px;
+    }
+
+    /* Visible uniquement quand l'animation est active */
+    .monrole-section-hint-active .monrole-hover-hint {
+      opacity: 1;
     }
   </style>
 
@@ -1753,6 +1802,89 @@
         }
       });
     });
+  </script>
+
+
+  <script>
+    /* =============================================
+       MICRO-ANIMATION — Section "Mon Rôle"
+       v2 : Ciblage direct de img.image-11,
+       zéro impact sur le layout Webflow.
+    ============================================= */
+    (function () {
+      document.addEventListener('DOMContentLoaded', function () {
+
+        var imgEl = document.querySelector('img.image-11');
+        if (!imgEl) return;
+
+        var sectionEl = document.querySelector('#Mon-role-section');
+        var containerEl = document.querySelector('.container-11');
+        if (!sectionEl) return;
+
+        /* --- Injection du badge dans le container global --- */
+        var badge = document.createElement('div');
+        badge.className = 'monrole-hover-hint';
+        badge.setAttribute('aria-hidden', 'true');
+        badge.textContent = '— Survolez les illustrations —';
+        if (containerEl) {
+          containerEl.appendChild(badge);
+        } else {
+          sectionEl.appendChild(badge);
+        }
+
+        var hintActive = false;
+        var hintDone = false;
+        var activationTimer = null;
+        var autoStopTimer = null;
+
+        /* --- Arrêt propre de l'animation --- */
+        function stopHint() {
+          if (hintDone) return;
+          hintDone = true;
+          if (activationTimer) clearTimeout(activationTimer);
+          if (autoStopTimer) clearTimeout(autoStopTimer);
+          sectionEl.classList.remove('monrole-section-hint-active');
+          imgEl.classList.remove('monrole-hint-active');
+          imgEl.classList.add('monrole-hint-done');
+          setTimeout(function () {
+            imgEl.classList.remove('monrole-hint-done');
+          }, 600);
+        }
+
+        /* --- Activation via IntersectionObserver ---
+           threshold: 0.05 = dès que 5% de la section
+           entre dans le viewport */
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting && !hintActive && !hintDone) {
+              observer.disconnect();
+              /* Délai de 1s pour laisser
+                 les animations Webflow se terminer */
+              activationTimer = setTimeout(function () {
+                if (hintDone) return;
+                hintActive = true;
+                imgEl.classList.add('monrole-hint-active');
+                sectionEl.classList.add('monrole-section-hint-active');
+                /* Auto-stop après 7s */
+                autoStopTimer = setTimeout(stopHint, 7000);
+              }, 1000);
+            }
+          });
+        }, { threshold: 0.05 });
+
+        observer.observe(sectionEl);
+
+        /* --- Arrêt sur le premier hover/touch --- */
+        var allIlluDivs = document.querySelectorAll(
+          '#Mon-role-section .div-block-13, #Mon-role-section .div-block-14, #Mon-role-section .div-block-15, #Mon-role-section .div-block-16, #Mon-role-section .div-block-17, #Mon-role-section .div-block-18, #Mon-role-section .divpourhovertest'
+        );
+        allIlluDivs.forEach(function (el) {
+          el.addEventListener('mouseenter', stopHint, { once: true });
+        });
+        sectionEl.addEventListener('touchstart', stopHint, { once: true, passive: true });
+
+      });
+    })();
   </script>
 
 </body>
