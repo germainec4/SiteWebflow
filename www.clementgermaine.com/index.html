@@ -1537,6 +1537,7 @@
           overscroll-behavior: contain !important;
           touch-action: pan-y !important;
           -webkit-overflow-scrolling: touch !important;
+          padding-top: 0 !important; /* Retire l'espace du container pour coller le titre en haut */
         }
 
         /* Glassmorphism Title Header */
@@ -1544,18 +1545,17 @@
           position: sticky !important;
           top: 0 !important;
           z-index: 50 !important;
-          background: rgba(255, 255, 255, 0.92) !important;
+          background: rgba(255, 255, 255, 0.94) !important;
           backdrop-filter: blur(12px) !important;
           -webkit-backdrop-filter: blur(12px) !important;
           
           /* Un subtil filet pour séparer du texte qui scrolle sous le titre */
           box-shadow: 0 4px 10px -10px rgba(0,0,0,0.1) !important;
           
-          /* Pour s'assurer qu'il couvre toute la largeur et englobe la croix */
           width: 100% !important;
-          padding-top: 24px !important;
-          padding-bottom: 12px !important;
-          margin-top: -24px !important;
+          margin-top: 0 !important; 
+          padding-top: 32px !important; /* Restitue un espace aéré au dessus du titre */
+          padding-bottom: 16px !important; /* Sépare bien le titre de la 1ère phrase */
         }
       </style>
     </div>
