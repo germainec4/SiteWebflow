@@ -1538,6 +1538,25 @@
           touch-action: pan-y !important;
           -webkit-overflow-scrolling: touch !important;
         }
+
+        /* Glassmorphism Title Header */
+        .titre-pop-up-skill-fitting {
+          position: sticky !important;
+          top: 0 !important;
+          z-index: 50 !important;
+          background: rgba(255, 255, 255, 0.92) !important;
+          backdrop-filter: blur(12px) !important;
+          -webkit-backdrop-filter: blur(12px) !important;
+          
+          /* Un subtil filet pour séparer du texte qui scrolle sous le titre */
+          box-shadow: 0 4px 10px -10px rgba(0,0,0,0.1) !important;
+          
+          /* Pour s'assurer qu'il couvre toute la largeur et englobe la croix */
+          width: 100% !important;
+          padding-top: 24px !important;
+          padding-bottom: 12px !important;
+          margin-top: -24px !important;
+        }
       </style>
     </div>
   </section>
@@ -1620,6 +1639,20 @@
 
       document.querySelectorAll('.pop-up').forEach(function(popup) {
         observer.observe(popup, { attributes: true });
+      });
+
+      document.querySelectorAll('.pop-up-item').forEach(function(popupItem) {
+        // Déplacer les croix de fermeture dans l'en-tête collant (sticky)
+        const title = popupItem.querySelector('.titre-pop-up-skill-fitting');
+        const closeBtn = popupItem.querySelector('.image-23.js-close-popup');
+        
+        if (title && closeBtn) {
+          // On force la croix à être positionnée absolument par rapport au titre
+          closeBtn.style.position = 'absolute';
+          closeBtn.style.top = '24px';
+          closeBtn.style.right = '24px'; // Ajustement discret de l'alignement
+          title.appendChild(closeBtn);
+        }
       });
 
       window.addEventListener("keydown", function (e) {
