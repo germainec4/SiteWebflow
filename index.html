@@ -270,12 +270,23 @@
 
     /* Sous-titre CTA — hiérarchie visuelle */
     .cta-subheading {
-      margin-top: 6px !important;      /* Serré sous le titre */
-      margin-bottom: 28px !important;  /* Espace net avant email/tél */
+      margin-top: 2px !important;       /* Collé sous le titre */
+      margin-bottom: 28px !important;   /* Espace net avant email/tél */
       font-size: 15px;
       line-height: 1.5;
       color: #555;
       font-weight: 400;
+    }
+
+    /* Réduction du margin-bottom du h1 CTA pour coller au sous-titre */
+    .cta-right-block ~ .right-block-cta h1.cta-heading,
+    .right-block-cta h1.headingapropos {
+      margin-bottom: 0 !important;
+    }
+
+    /* Textarea : forcer la police du site (les navigateurs ignorent font-family sur textarea) */
+    #cg-contact-form textarea.text-field {
+      font-family: Sora, Urbanist, Roboto, sans-serif !important;
     }
   </style>
 
