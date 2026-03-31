@@ -1514,24 +1514,26 @@
       <div class="w-layout-blockcontainer container w-container">
         <div class="w-layout-blockcontainer hero-flexbox mobileview w-container">
           <div class="w-layout-blockcontainer right-block apropos cta-right-block w-container">
-            <div class="w-form">
-              <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form"
-                data-wf-page-id="67829ee4c36756f3a6ecc238" data-wf-element-id="7a1a351b-1f51-a8f9-40e2-5d9343928032"
-                data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e"><input class="text-field w-input" maxlength="256"
-                  name="name" data-name="Name" placeholder="Votre nom" type="text" id="name" required="" /><input
-                  class="text-field w-input" maxlength="256" name="email" data-name="Email" placeholder="Email"
-                  type="email" id="email" required="" /><input class="text-field w-input" maxlength="256" name="name-2"
-                  data-name="Name 2" placeholder="Votre entreprise" type="text" id="name-2" /><input
-                  class="text-field form-alternative w-input" maxlength="256" name="name-2" data-name="Name 2"
-                  placeholder="Comment je peux vous aider ? Je vous recontacterez rapidement :) " type="text"
-                  id="Form-2" /><input type="submit" data-wait="Please wait..."
-                  data-w-id="7a1a351b-1f51-a8f9-40e2-5d9343928039" class="button-primary w-button"
-                  value="Me contacter" /></form>
-              <div class="success-message w-form-done">
+            <div class="cg-form-wrapper">
+              <form id="cg-contact-form" name="cg-contact-form"
+                method="POST" action="https://formspree.io/f/xykbjlaz" class="form">
+                <input type="hidden" name="_replyto" value="clementgermaine.test@gmail.com" />
+                <input class="text-field" maxlength="256"
+                  name="name" placeholder="Votre nom" type="text" id="cg-name" required />
+                <input class="text-field" maxlength="256"
+                  name="email" placeholder="Email" type="email" id="cg-email" required />
+                <input class="text-field" maxlength="256"
+                  name="entreprise" placeholder="Votre entreprise" type="text" id="cg-company" />
+                <input class="text-field form-alternative" maxlength="512"
+                  name="message" placeholder="Comment je peux vous aider ? Je vous recontacterai rapidement :)"
+                  type="text" id="cg-message" />
+                <input type="submit" id="cta-submit-btn" class="button-primary" value="Me contacter" />
+              </form>
+              <div class="success-message w-form-done" id="form-success" style="display:none">
                 <div class="text-block-4">Merci ! J&#x27;ai bien reçu votre demande de contact !</div>
               </div>
-              <div class="error-message w-form-fail">
-                <div>Oups, malheureusement il y a eu un problème lors de l&#x27;envoi du formulaire.</div>
+              <div class="error-message w-form-fail" id="form-error" style="display:none">
+                <div>Oups, malheureusement il y a eu un problème lors de l&#x27;envoi du formulaire. Réessayez ou écrivez-moi directement.</div>
               </div>
             </div>
           </div>
@@ -1883,6 +1885,57 @@
         });
         sectionEl.addEventListener('touchstart', stopHint, { once: true, passive: true });
 
+      });
+    })();
+  </script>
+
+  <script>
+    /* =============================================
+       FORMSPREE — Soumission AJAX du formulaire CTA
+       Sans rechargement de page, feedback natif.
+    ============================================= */
+    (function () {
+      document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('cg-contact-form');
+        if (!form) return;
+
+        var successMsg = document.getElementById('form-success');
+        var errorMsg   = document.getElementById('form-error');
+        var submitBtn  = document.getElementById('cta-submit-btn');
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          /* Feedback visuel pendant l'envoi */
+          submitBtn.disabled = true;
+          submitBtn.value = 'Envoi en cours…';
+          successMsg.style.display = 'none';
+          errorMsg.style.display   = 'none';
+
+          var data = new FormData(form);
+
+          fetch('https://formspree.io/f/xykbjlaz', {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          })
+          .then(function (response) {
+            if (response.ok) {
+              /* Succès : on masque le formulaire et on affiche le message de confirmation */
+              form.style.display = 'none';
+              successMsg.style.display = 'block';
+            } else {
+              return response.json().then(function (data) {
+                throw new Error(data.error || 'Erreur inconnue');
+              });
+            }
+          })
+          .catch(function () {
+            errorMsg.style.display = 'block';
+            submitBtn.disabled = false;
+            submitBtn.value = 'Me contacter';
+          });
+        });
       });
     })();
   </script>
