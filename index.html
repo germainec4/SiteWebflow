@@ -284,6 +284,17 @@
       margin-bottom: 0 !important;
     }
 
+    /* Élargissement du container Hero pour éviter le wrapping sur "exploitables" */
+    @media screen and (min-width: 991px) {
+      .hero-flexbox .left-block {
+        max-width: 800px !important;
+        flex: 0 0 auto !important;
+      }
+      .heading {
+        letter-spacing: -0.02em !important;
+      }
+    }
+
     /* Textarea : forcer la police du site (les navigateurs ignorent font-family sur textarea) */
     #cg-contact-form textarea.text-field {
       font-family: Sora, Urbanist, Roboto, sans-serif !important;
