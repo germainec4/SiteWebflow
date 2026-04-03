@@ -186,27 +186,36 @@
 
   <style>
     /* =============================================
-       SECTION À PROPOS — Optimisation Layout
+       SECTION À PROPOS — Optimisation Layout Filigrane (Watermark)
     ============================================= */
     .a-propos-section {
       padding-top: 100px !important;
       padding-bottom: 100px !important;
+      position: relative;
+      overflow: hidden; /* Empêche le filigrane de déborder sur la largeur */
     }
 
     .apropos-layout-fixed {
       display: flex !important;
-      flex-direction: row !important;
+      flex-direction: column !important;
       align-items: center !important;
-      gap: 60px !important;
+      justify-content: center !important;
+      position: relative !important;
       width: 100% !important;
       margin-top: 40px !important;
+      min-height: 400px;
     }
 
     .image-discrete-wrapper {
-      width: 200px !important;
-      flex: 0 0 200px !important;
-      display: flex;
-      justify-content: center;
+      position: absolute !important;
+      left: -5% !important; /* Position en retrait sur la gauche */
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      width: 500px !important; /* Taille très imposante */
+      max-width: 80vw !important;
+      opacity: 0.08 !important; /* Transparence pour effet filigrane doux */
+      z-index: 0 !important;
+      pointer-events: none !important; /* Désactive les interactions pour l'image de fond */
     }
 
     .image-discrete {
@@ -215,13 +224,19 @@
     }
 
     .text-expanded {
-      flex: 1 !important;
+      position: relative !important;
+      z-index: 10 !important; /* Le texte repasse par dessus l'image */
+      max-width: 750px !important; /* Largeur d'or pour la lisibilité */
+      width: 100% !important;
       text-align: left !important;
     }
 
-    /* Forcer l'alignement gauche du titre si besoin sur desktop */
+    /* Le titre reste aligné à gauche globalement ou centré, on le recentre par défaut ici */
     .heading-3 {
+      position: relative;
+      z-index: 10;
       margin-bottom: 20px !important;
+      text-align: center !important;
     }
 
     @media (max-width: 991px) {
@@ -229,16 +244,15 @@
         padding-top: 80px !important;
         padding-bottom: 60px !important;
       }
-      .apropos-layout-fixed {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 30px !important;
-      }
       .image-discrete-wrapper {
-        width: 150px !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important; /* Centré complètement sur mobile */
+        width: 350px !important;
+        opacity: 0.05 !important; /* Encore plus discret sur mobile */
       }
       .text-expanded {
-        text-align: center !important;
+        text-align: left !important;
+        padding: 0 15px; /* Evite au texte de toucher les bords sur mobile */
       }
     }
   </style>
