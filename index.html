@@ -189,8 +189,8 @@
        SECTION À PROPOS — Optimisation Layout Filigrane (Watermark)
     ============================================= */
     .a-propos-section {
-      padding-top: 100px !important;
-      padding-bottom: 100px !important;
+      padding-top: 60px !important;
+      padding-bottom: 60px !important;
       position: relative;
       overflow: hidden; /* Empêche le filigrane de déborder sur la largeur */
     }
@@ -202,7 +202,7 @@
       justify-content: center !important;
       position: relative !important;
       width: 100% !important;
-      margin-top: 40px !important;
+      margin-top: 0px !important; /* Retiré pour rapprocher le texte du titre */
       min-height: 400px;
     }
 
@@ -231,18 +231,18 @@
       text-align: left !important;
     }
 
-    /* Le titre reste aligné à gauche globalement ou centré, on le recentre par défaut ici */
-    .heading-3 {
+    /* Restriction du style uniquement au titre de la section A-propos pour ne pas impacter "Mes Expériences" */
+    .a-propos-section .heading-3 {
       position: relative;
       z-index: 10;
-      margin-bottom: 20px !important;
+      margin-bottom: 20px !important; /* Marge modérée sous le titre */
       text-align: center !important;
     }
 
     @media (max-width: 991px) {
       .a-propos-section {
-        padding-top: 80px !important;
-        padding-bottom: 60px !important;
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
       }
       .image-discrete-wrapper {
         left: 50% !important;
@@ -1474,9 +1474,9 @@
     </div>
   </section>
   <section id="Avis">
-    <section id="A-propos" class="a-propos-section" style="padding-top: 120px; padding-bottom: 120px;">
+    <section id="A-propos" class="a-propos-section">
       <div class="w-layout-blockcontainer container w-container">
-        <h2 class="heading-3" style="text-align: left; margin-bottom: 60px;">À propos de <strong class="bold-text">Moi</strong></h2>
+        <h2 class="heading-3">À propos de <strong class="bold-text">Moi</strong></h2>
       </div>
       <div class="w-layout-blockcontainer container w-container">
         <div class="apropos-layout-fixed">
