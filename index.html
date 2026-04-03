@@ -191,10 +191,11 @@
     .apropos-layout-fixed {
       display: flex !important;
       flex-direction: row !important;
-      align-items: flex-start !important;
-      gap: 60px !important; /* Espace maîtrisé entre image et texte */
-      justify-content: flex-start !important;
+      align-items: center !important; /* Centrage vertical image/texte */
+      gap: 50px !important;
+      justify-content: center !important; /* Centrage horizontal du bloc global */
       width: 100% !important;
+      margin: 0 auto !important;
     }
 
     .image-discrete-wrapper {
@@ -211,29 +212,29 @@
     }
 
     .text-expanded {
-      flex: 1 !important;
-      max-width: none !important; /* Laisse le texte prendre toute la place restante */
+      flex: 0 1 700px !important; /* Contrôle la largeur du texte pour qu'il ne s'éparpille pas sur les bords */
       text-align: left !important;
     }
 
     .headingapropos {
-      text-align: left !important;
+      text-align: center !important; /* Titre centré globalement */
       width: 100% !important;
-      margin-left: 0 !important;
+      margin: 0 auto 50px auto !important;
     }
 
     @media (max-width: 991px) {
       .apropos-layout-fixed {
         flex-direction: column !important;
         align-items: center !important;
-        gap: 20px !important;
+        gap: 30px !important;
       }
       .image-discrete-wrapper {
         width: 150px !important;
         flex: 0 0 auto !important;
       }
-      .headingapropos {
-        text-align: center !important;
+      .text-expanded {
+        flex: 1 1 auto !important;
+        width: 100% !important;
       }
     }
   </style>
@@ -1457,11 +1458,11 @@
   <section id="Avis">
     <section id="A-propos" class="a-propos-section">
       <div class="w-layout-blockcontainer container-2 w-container">
-        <h2 class="heading headingapropos" style="margin-bottom: 40px;">À propos de <strong class="bold-text">Moi</strong></h2>
-        <div class="w-layout-blockcontainer hero-flexbox apropos-layout-fixed w-container">
+        <h2 class="heading headingapropos">À propos de <strong class="bold-text">Moi</strong></h2>
+        <div class="w-layout-blockcontainer apropos-layout-fixed w-container">
           <div class="w-layout-blockcontainer right-block apropos w-container image-discrete-wrapper">
             <img src="https://cdn.prod.website-files.com/67829ee3c36756f3a6ecc22a/679285ccd046c649c494668b_TETE Clément à propos.svg"
-              loading="lazy" width="200" alt="Illustration de Clément GERMAINE, dans un style simple"
+              loading="lazy" width="250" alt="Illustration de Clément GERMAINE, dans un style simple"
               class="image imageapropos image-discrete" />
             <img src="https://cdn.prod.website-files.com/67829ee3c36756f3a6ecc22a/679e432b0f9e01ab481dd77f_TETE Clément à proposEasterEGG.svg"
               loading="lazy" alt="" class="image-16" />
