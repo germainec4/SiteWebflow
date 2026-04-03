@@ -188,22 +188,25 @@
     /* =============================================
        SECTION À PROPOS — Optimisation Layout
     ============================================= */
+    .a-propos-section {
+      padding-top: 100px !important;
+      padding-bottom: 100px !important;
+    }
+
     .apropos-layout-fixed {
       display: flex !important;
       flex-direction: row !important;
-      align-items: center !important; /* Centrage vertical image/texte */
-      gap: 50px !important;
-      justify-content: center !important; /* Centrage horizontal du bloc global */
+      align-items: center !important;
+      gap: 60px !important;
       width: 100% !important;
-      margin: 0 auto !important;
+      margin-top: 40px !important;
     }
 
     .image-discrete-wrapper {
-      width: 250px !important;
-      flex: 0 0 250px !important;
+      width: 200px !important;
+      flex: 0 0 200px !important;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      justify-content: center;
     }
 
     .image-discrete {
@@ -212,17 +215,20 @@
     }
 
     .text-expanded {
-      flex: 0 1 700px !important; /* Contrôle la largeur du texte pour qu'il ne s'éparpille pas sur les bords */
+      flex: 1 !important;
       text-align: left !important;
     }
 
-    .headingapropos {
-      text-align: center !important; /* Titre centré globalement */
-      width: 100% !important;
-      margin: 0 auto 50px auto !important;
+    /* Forcer l'alignement gauche du titre si besoin sur desktop */
+    .heading-3 {
+      margin-bottom: 20px !important;
     }
 
     @media (max-width: 991px) {
+      .a-propos-section {
+        padding-top: 80px !important;
+        padding-bottom: 60px !important;
+      }
       .apropos-layout-fixed {
         flex-direction: column !important;
         align-items: center !important;
@@ -230,11 +236,9 @@
       }
       .image-discrete-wrapper {
         width: 150px !important;
-        flex: 0 0 auto !important;
       }
       .text-expanded {
-        flex: 1 1 auto !important;
-        width: 100% !important;
+        text-align: center !important;
       }
     }
   </style>
@@ -1457,17 +1461,17 @@
   </section>
   <section id="Avis">
     <section id="A-propos" class="a-propos-section">
-      <div class="w-layout-blockcontainer container-2 w-container">
-        <h2 class="heading headingapropos">À propos de <strong class="bold-text">Moi</strong></h2>
-        <div class="w-layout-blockcontainer apropos-layout-fixed w-container">
-          <div class="w-layout-blockcontainer right-block apropos w-container image-discrete-wrapper">
+      <div class="w-layout-blockcontainer container w-container">
+        <h2 class="heading-3">À propos de <strong class="bold-text">Moi</strong></h2>
+        <div class="apropos-layout-fixed">
+          <div class="image-discrete-wrapper">
             <img src="https://cdn.prod.website-files.com/67829ee3c36756f3a6ecc22a/679285ccd046c649c494668b_TETE Clément à propos.svg"
-              loading="lazy" width="250" alt="Illustration de Clément GERMAINE, dans un style simple"
-              class="image imageapropos image-discrete" />
+              loading="lazy" width="200" alt="Illustration de Clément GERMAINE, dans un style simple"
+              class="image-discrete" />
             <img src="https://cdn.prod.website-files.com/67829ee3c36756f3a6ecc22a/679e432b0f9e01ab481dd77f_TETE Clément à proposEasterEGG.svg"
               loading="lazy" alt="" class="image-16" />
           </div>
-          <div class="w-layout-blockcontainer left-block aproposleftblock w-container text-expanded">
+          <div class="text-expanded">
             <p class="paragraph apropos"><strong>Ma mission est de confronter vos intentions de conception à la réalité de l'usage.</strong><br /><br />Mon parcours est né d’une double conviction : un produit performant ne se valide pas seulement en laboratoire, et la donnée n’a de valeur que si elle est actionnable par les équipes de conception.<br /><br /><strong>Une expertise forgée chez les leaders de l’Outdoor.</strong><br />Mon expérience chez <strong>Quechua</strong> (Decathlon) a été le pivot de mon approche. En travaillant au cœur du pôle conception Mountain Hiking, j'ai appris à traduire des sensations utilisateurs complexes en leviers d'optimisation concrets. C’est cette rigueur méthodologique, acquise sur des projets de grande ampleur, que je mets aujourd’hui à votre disposition en freelance.<br /><br /><strong>L’ergonomie au centre de la performance.</strong><br />Athlète depuis plus de dix ans, je connais l'importance d'un équipement qui sait se faire oublier. Ce regard de pratiquant est soutenu par une formation académique pointue : un <strong>Master en Ingénierie et Ergonomie de l’Activité Physique (IEAP)</strong>. Cette spécialité me permet d’aborder chaque test avec une approche scientifique centrée sur l’humain, garantissant la fiabilité de vos protocoles.<br /><br /><strong>Une valeur perçue validée par le marché.</strong><br />Mon activité en freelance m’a permis de piloter <strong>près d'une centaine de tests sur une grande variété de produits</strong> : des chaussures au matériel de camping, en passant par des accessoires techniques et des dispositifs complexes comme des <strong>exosquelettes d’aide à la marche</strong>. Cette diversité renforce ma capacité à traiter des systèmes où l'interaction humain-produit est critique, sécurisant ainsi vos choix stratégiques avant chaque lancement.</p>
             <img src="https://cdn.prod.website-files.com/67829ee3c36756f3a6ecc22a/679285ccd046c649c494668b_TETE Clément à propos.svg"
               loading="lazy" width="229.5" alt="" class="image-18" />
