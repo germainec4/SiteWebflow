@@ -192,13 +192,14 @@
       display: flex !important;
       flex-direction: row !important;
       align-items: flex-start !important;
-      gap: 50px !important;
+      gap: 60px !important; /* Espace maîtrisé entre image et texte */
       justify-content: flex-start !important;
+      width: 100% !important;
     }
 
     .image-discrete-wrapper {
-      width: 200px !important;
-      flex: 0 0 200px !important;
+      width: 250px !important;
+      flex: 0 0 250px !important;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -211,18 +212,28 @@
 
     .text-expanded {
       flex: 1 !important;
-      max-width: 900px !important;
+      max-width: none !important; /* Laisse le texte prendre toute la place restante */
+      text-align: left !important;
+    }
+
+    .headingapropos {
+      text-align: left !important;
+      width: 100% !important;
+      margin-left: 0 !important;
     }
 
     @media (max-width: 991px) {
       .apropos-layout-fixed {
         flex-direction: column !important;
         align-items: center !important;
-        gap: 30px !important;
+        gap: 20px !important;
       }
       .image-discrete-wrapper {
-        width: 180px !important;
+        width: 150px !important;
         flex: 0 0 auto !important;
+      }
+      .headingapropos {
+        text-align: center !important;
       }
     }
   </style>
