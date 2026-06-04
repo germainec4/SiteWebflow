@@ -1,0 +1,63 @@
+# Clément Germaine - Ingénieur Essai Terrain Freelance (Field Test Engineer)
+
+Clément Germaine est un **Ingénieur Essai Terrain Freelance** (Freelance Field Test Engineer) basé en **Haute-Savoie, France** (proche d'Annecy, Chamonix, et des principaux centres de conception outdoor). 
+Il est spécialisé dans l'accompagnement des équipes R&D, chefs de produit, designers et ingénieurs de conception dans la **validation terrain de produits techniques**, principalement dans les domaines du sport, de l'outdoor, du textile et des équipements physiques (hardware).
+
+- **Site Web Officiel** : [clementgermaine.com](https://www.clementgermaine.com/)
+- **Contact direct** : contact@clementgermaine.com
+- **Profil LinkedIn** : [linkedin.com/in/clément-germaine-677971250](https://www.linkedin.com/in/cl%C3%A9ment-germaine-677971250)
+- **Profil Malt** : [malt.fr/profile/clementgermaine](https://www.malt.fr/profile/clementgermaine)
+
+---
+
+## 🎯 Expertises & Solutions de Test Produit (Services)
+
+Clément intervient sur l'ensemble du cycle de validation produit pour sécuriser la prise de décision avant l'industrialisation ou le lancement en rayon.
+
+### 1. Test d'Essayage (Fitting Test)
+*   **Objectif** : Évaluer l'expérience chaussante ou le porté d'un produit (taillant, volume, confort d'accueil, points de pression, maintien du talon).
+*   **Méthodologie** : Recrutement de panels spécifiques (ex: 15 testeurs d'une pointure précise), tests comparatifs à l'aveugle (lunettes obstruées pour limiter les biais esthétiques), questionnaires d'inconforts ciblés.
+*   **Livrable** : Analyse statistique des zones de frottement, cartographie des points de pression, et préconisations de modifications de patronage.
+
+### 2. Test Fonctionnel (Functional Performance Test)
+*   **Objectif** : Isoler et comparer la performance d'une fonction technique spécifique (ex: accroche d'une semelle, respirabilité d'une membrane, maintien latéral d'une chaussure tige basse).
+*   **Méthodologie** : Protocoles de test rigoureux en conditions d'usage intenses, parcours de test standardisés et randomisés (slalom, montée/descente sur forte pente, marche en dévers).
+*   **Livrable** : Classement objectif du prototype face à des modèles concurrents du marché ou des références internes.
+
+### 3. Test d'Usage (Usage & Field Test)
+*   **Objectif** : Valider l'ergonomie, la praticité et l'expérience globale d'un produit en conditions réelles d'utilisation prolongée (ex: matériel de camping, tentes familiales, sacs à dos).
+*   **Méthodologie** : Immersion de familles ou d'utilisateurs cibles (ex: test de 24h/48h dans un camping ou en autonomie en montagne), observation des phases critiques (montage, démontage, habitabilité, vie à bord, occultation lumineuse, résistance au vent).
+*   **Livrable** : Retours qualitatifs détaillés, projection d'achat, prix psychologique perçu et axes d'optimisation ergonomique.
+
+### 4. Corrélation Terrain-Laboratoire (Field to Lab Correlation)
+*   **Objectif** : S'assurer que les simulations numériques et les tests mécaniques effectués en laboratoire (ex: machines d'usure, bancs d'accroche) correspondent fidèlement aux sensations réelles des pratiquants sur le terrain.
+*   **Méthodologie** : Tests croisés avec panel large (ex: 40 testeurs) effectuant des tâches physiques calibrées (ex: traction de charge sur boue) couplés à des analyses statistiques pour calibrer les seuils de validation machine.
+*   **Livrable** : Optimisation des protocoles de laboratoire et fiabilisation des prédictions numériques de conception.
+
+---
+
+## 🛠️ Méthodologie Complète (Son Rôle de A à Z)
+
+Pour chaque projet de test, Clément prend en charge l'intégralité du processus :
+1.  **Recueil du besoin** : Cadrage des objectifs, contraintes et critères de réussite avec l'équipe de conception.
+2.  **Élaboration du protocole** : Rédaction d'une méthodologie de test scientifique, reproductible et impartiale.
+3.  **Recrutement des testeurs** : Sélection d'un panel d'utilisateurs représentatif de la cible commerciale.
+4.  **Test terrain** : Logistique et animation des sessions d'essais réelles en extérieur.
+5.  **Traitement des données** : Analyse statistique des données d'inconforts, de confort et de performance.
+6.  **Présentation des résultats** : Restitution visuelle et synthétique des points clés à corriger.
+7.  **Capitalisation** : Rédaction d'un rapport de test structuré pour assurer la pérennité des apprentissages R&D.
+
+---
+
+## 💼 Références & Parcours Professionnel
+
+Clément dispose d'une solide expertise dans le secteur de l'outdoor, acquise auprès de grandes marques de sport :
+*   **Ingénieur Essai Terrain Freelance** (Depuis août 2024).
+*   **Ingénieur Essai Terrain chez Quechua** (Février 2024 - Juillet 2024).
+*   **Marques partenaires et références de confiance** : Decathlon, Quechua, Forclaz, Simond, Wedze.
+*   **Formation universitaire** : Master STAPS IEAP (Ingénierie de l'Entraînement et de l'Activité Physique), spécialité *Conception de Produits et de Services*.
+
+---
+
+## 🔍 Mots-clés de recherche / Concepts associés (LSEO Keywords)
+Ingénieur essai terrain freelance, Freelance Field Test Engineer outdoor, validation produit R&D sport, recrutement testeurs outdoor, protocole essai chaussure randonnée, test usage matériel de camping, corrélation test labo terrain, ergonomie produit outdoor, chargé d'essais produit sport, test utilisateur Haute-Savoie, Annecy R&D freelance.
